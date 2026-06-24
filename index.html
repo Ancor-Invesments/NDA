@@ -40,8 +40,35 @@
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
       text-decoration: none;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      filter: brightness(1.1);
+      flex-shrink: 0;
+    }
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1;
+      gap: 0.2rem;
+    }
+    .logo-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.18em;
+      color: #f0e6d0;
+    }
+    .logo-sub {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: rgba(240,230,208,0.75);
     }
     .logo-wrap svg { height: 38px; width: auto; }
     .logo-text {
@@ -599,13 +626,12 @@
 
   <!-- HEADER -->
   <header>
-    <a href="https://ancorinvestments.com" class="logo-wrap">
-      <svg viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 56 L25 4 L46 56" stroke="#b8892a" stroke-width="4" stroke-linejoin="round" fill="none"/>
-        <line x1="13" y1="36" x2="37" y2="36" stroke="#b8892a" stroke-width="3"/>
-        <rect x="21" y="44" width="8" height="12" fill="#b8892a"/>
-      </svg>
-      <span class="logo-text">Ancor Investments</span>
+        <a href="https://ancorinvestments.com" class="logo-wrap">
+      <img src="data:image/png;base64,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" alt="Ancor Investments" class="logo-img" />
+      <div class="logo-text-wrap">
+        <span class="logo-name">ANCOR</span>
+        <span class="logo-sub">Investments</span>
+      </div>
     </a>
     <div class="header-badge">Acceso restringido</div>
   </header>
@@ -617,7 +643,7 @@
     <div class="property-caption">
       <div class="property-caption-left">
         <div class="property-label">El activo</div>
-        <h2 class="property-title">Solar residencial en<br><em>Barcelona</em></h2>
+        <h2 class="property-title">Solar residencial en<br><em>Alt Penedès, Barcelona</em></h2>
       </div>
       <div class="property-caption-right">
         <div class="prop-stat">
@@ -644,11 +670,11 @@
         </div>
         <h1 class="hero-title">
           Oportunidad de desarrollo<br>
-          residencial en la<br>
-          <em>provincia de Barcelona</em>
+          residencial en el<br>
+          <em>Alt Penedès, Barcelona</em>
         </h1>
         <p class="hero-sub">
-          Solar residencial en ubicación urbana consolidada, apto para promoción plurifamiliar de obra nueva. Comercialización en exclusiva.
+          Solar residencial en ubicación urbana consolidada en el Alt Penedès, apto para promoción plurifamiliar de obra nueva. Rango de precio orientativo entre <strong style="color:var(--gold-light)">1.150.000 € – 1.250.000 €</strong>. Comercialización en exclusiva.
         </p>
 
         <!-- Magnitudes -->
@@ -701,10 +727,19 @@
           </div>
         </div>
 
+        <!-- Botón Ancor Investments -->
+        <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="https://elsindicato.github.io/ancorinvestment/#que-hacemos" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; gap:0.6rem; border:1px solid var(--gold); color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.65rem 1.25rem; text-decoration:none; transition:background 0.2s, color 0.2s; font-family:'Inter',sans-serif; font-weight:500;">
+            Conoce Ancor Investments
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
         <!-- Aviso acceso -->
         <div style="margin-top:2rem; padding:1.25rem 1.5rem; border-left:2px solid var(--gold); background:rgba(184,137,42,0.05);">
           <p style="font-size:0.78rem; line-height:1.75; color:rgba(245,237,224,0.5); font-weight:300;">
-            La ubicación exacta, documentación urbanística, informe técnico y condiciones económicas se facilitan únicamente tras la aceptación del acuerdo de confidencialidad.
+            La ubicación exacta, documentación urbanística, informe técnico y condiciones económicas detalladas se facilitan únicamente tras la aceptación del acuerdo de confidencialidad. <em>Precio orientativo: 1.150.000 € – 1.250.000 €.</em>
           </p>
         </div>
       </div>
@@ -718,7 +753,7 @@
           <form id="nda-form" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms config -->
             <input type="hidden" name="access_key" value="4ee9f3e6-0a32-4794-90e5-c742ecbe1c1f"/>
-            <input type="hidden" name="subject" value="Solicitud de dossier confidencial — Solar Barcelona"/>
+            <input type="hidden" name="subject" value="Solicitud de dossier confidencial — Solar Alt Penedès"/>
             <input type="hidden" name="from_name" value="Ancor Investments — NDA Form"/>
             <input type="checkbox" name="botcheck" style="display:none"/>
 
@@ -815,7 +850,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">© 2024 Ancor Investments 2023, S.L. — Todos los derechos reservados.</div>
+    <div class="footer-copy">© 2026 Ancor Investments 2023, S.L. — Todos los derechos reservados.</div>
     <div class="footer-legal">Información confidencial — Uso restringido</div>
   </footer>
 
